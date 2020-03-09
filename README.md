@@ -12,6 +12,40 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+UPDATES
+import React from 'react';
+import Head from 'next/head'
+import PageContent from 'Components/PageContent';
+import SimpleLanguageData from 'Utils/SimpleLanguageData'
+
+const MainPage = () => {
+
+    return (
+            <PageContent title={'title'} description={'description'}>
+            <Head>
+                <meta key="copyright" name="copyright" content="Copyright 2019, OTA AI, Inc." />
+            </Head>
+            <div>
+            My PageContent
+            </div>
+            </PageContent>
+    )
+
+};
+
+MainPage.getInitialProps = async function (context) {
+return {}
+};
+
+export default MainPage
+
+    server.get('/new', (req, res) => {
+      const actualPage = '/newApp';
+      const contextQuery = LanguageData.find(language => language.symbol === 'en');
+
+      app.render(req, res, actualPage, contextQuery);
+    })
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
