@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './components/layout/Navbar';
+import Users from './components/users/Users';
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,9 @@ class App extends Component {
     return (
       <div className='App'>
         <Navbar />
+        <div className='container'>
+          <Users />
+        </div>
       </div>
     );
   }
@@ -29,6 +33,7 @@ export default App;
 *Props = Propetries than you can pass into a component from outside. 
     - Default props; devs have ability to pass in or not, will overwrite if placed in 
     - Prop types; basically checks types (ie -will telll you if prop should be array, string, #, and so forth)
+  
   
     
     
