@@ -34,7 +34,8 @@ export default App;
     - Default props; devs have ability to pass in or not, will overwrite if placed in 
     - Prop types; basically checks types (ie -will telll you if prop should be array, string, #, and so forth)
   
-  
+*Functional Components - can have state within functional components using hooks, no need for class based 
+These w/ hooks also make code cleaner versus using classes (but both will get same result if done properly)
     
     
     
