@@ -2,14 +2,30 @@ import React, { Component } from 'react';
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
 import './App.css';
+import axios from 'axios';
 
+// Making HTTP Requests and updating state components --> Using AXIOS; promised based HTTP Client
 class App extends Component {
+  state = {
+    users: [],
+    loading: false,
+  };
+
+  async componentDidMount() {
+    this.setState({ loading: true });
+
+    const res = await axios.get('https://api.github.com/users');
+
+    this.setState({ users: res.data, loading: false });
+
+    // console.log(res.data);
+  }
   render() {
     return (
       <div className='App'>
         <Navbar />
         <div className='container'>
-          <Users />
+          <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
     );
